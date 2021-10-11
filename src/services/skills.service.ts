@@ -2,8 +2,6 @@ import { Collection, Db } from 'mongodb';
 import client from '../db';
 import { Skill } from '../models/skill';
 
-
-
 export default class SkillsService {
     private database: Db;
     private skills: Collection<Skill>;
