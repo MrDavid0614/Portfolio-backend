@@ -1,14 +1,12 @@
-import { Collection, Db } from 'mongodb';
-import client from '../db';
-import { Project } from '../models/project';
+import { Collection } from 'mongodb';
+import database from '../db';
+import { Project } from '../types/project';
 
-export default class ProjectsService {
-    private database: Db;
+export default class ProjectModel {
     private projects: Collection<Project>;
 
     constructor() {
-        this.database = client.db('Portfolio');
-        this.projects = this.database.collection<Project>('projects');
+        this.projects = database.collection<Project>('projects');
     }
 
     async getAll() {
